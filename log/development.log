@@ -1,0 +1,78 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (237.8ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (250.7ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (26.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSamples (20120816121138)
+  [4;36;1mSQL (94.1ms)[0m   [0;1mCREATE TABLE `samples` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_name` varchar(255), `emial` varchar(255), `pwd` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (57.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120816121138')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `samples`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `samples`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-08-16 17:42:27) [GET]
+  [4;36;1mSample Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 114ms (View: 104, DB: 1) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2012-08-16 17:42:40) [POST]
+  Parameters: {"sample"=>{"emial"=>"k.rohini2@gmail.com", "user_name"=>"Rohini ", "pwd"=>"rohini"}, "commit"=>"Create", "authenticity_token"=>"BMj8WNHlBfGFu1Tut/xHD0e33KAhFM3CrF235QYbQuk="}
+  [4;35;1mSample Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (0.3ms)[0m   [0mINSERT INTO `samples` (`emial`, `created_at`, `updated_at`, `user_name`, `pwd`) VALUES('k.rohini2@gmail.com', '2012-08-16 12:12:40', '2012-08-16 12:12:40', 'Rohini ', 'rohini')[0m
+  [4;36;1mSQL (74.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/samples/1
+Completed in 89ms (DB: 76) | 302 Found [http://localhost/samples]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2012-08-16 17:42:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSample Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (18.1ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 1) [0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 43ms (View: 10, DB: 20) | 200 OK [http://localhost/samples/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2012-08-16 17:42:42) [GET]
+  [4;35;1mSample Load (0.5ms)[0m   [0mSELECT * FROM `samples` [0m
+Rendering template within layouts/samples
+Rendering samples/index
+  [4;36;1mSample Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Completed in 23ms (View: 15, DB: 2) | 200 OK [http://localhost/samples]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2012-08-16 18:52:50) [GET]
+  [4;35;1mSample Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 20ms (View: 11, DB: 2) | 200 OK [http://localhost/samples/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2012-08-16 18:52:51) [GET]
+  [4;36;1mSample Load (0.2ms)[0m   [0;1mSELECT * FROM `samples` [0m
+Rendering template within layouts/samples
+Rendering samples/index
+  [4;35;1mSample Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/samples]
